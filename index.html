@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Viva: A Vida é uma Festa</title>
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <main class="quiz-container">
+        <!-- SELETOR DE IDIOMAS -->
+        <div class="lang-selector">
+            <button onclick="changeLanguage('pt')" class="lang-btn" title="Português">🇧🇷 PT</button>
+            <button onclick="changeLanguage('en')" class="lang-btn" title="English">🇺🇸 EN</button>
+            <button onclick="changeLanguage('es')" class="lang-btn" title="Español">🇲🇽 ES</button>
+        </div>
+
+        <!-- BANDEIRINHAS (PAPEL PICADO) DECORATIVAS -->
+        <div class="papel-picado">
+            <span>🌸</span><span>💀</span><span>🎸</span><span>🌼</span><span>💀</span><span>🌸</span>
+        </div>
+
+        <!-- TELA INICIAL -->
+        <section id="screen-welcome" class="screen active">
+            <div class="theme-icon">🎸</div>
+            <h1 id="ui-title">Viva: A Vida é uma Festa</h1>
+            <p id="ui-subtitle" class="subtitle">Atravesse a ponte de pétalas de cempasúchil para a Terra dos Mortos. Teste seus conhecimentos!</p>
+            <button id="btn-start" class="btn-primary">Iniciar Quiz</button>
+        </section>
+
+        <!-- TELA DO QUIZ -->
+        <section id="screen-quiz" class="screen">
+            <header class="quiz-header">
+                <div class="progress-info">
+                    <span id="question-number">Pergunta 1/10</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar" class="progress-bar-fill"></div>
+                </div>
+            </header>
+
+            <div class="question-box">
+                <h2 id="question-text">Carregando pergunta...</h2>
+                <div id="options-container" class="options-grid">
+                    <!-- Alternativas inseridas via JS -->
+                </div>
+            </div>
+
+            <footer class="quiz-footer">
+                <button id="btn-next" class="btn-primary hidden" disabled>Próxima Pergunta</button>
+            </footer>
+        </section>
+
+        <!-- TELA DE RESULTADO -->
+        <section id="screen-result" class="screen">
+            <div class="result-icon">🌼</div>
+            <h2 id="ui-result-title">Resultado Final</h2>
+            <div class="score-display">
+                <span id="score-text-before">Você acertou</span> <span id="final-score">0</span> <span id="score-text-middle">de</span> <span id="total-questions">0</span> <span id="score-text-after">perguntas!</span>
+            </div>
+            <p id="result-message" class="result-message"></p>
+            <button id="btn-restart" class="btn-primary">Jogar Novamente</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
